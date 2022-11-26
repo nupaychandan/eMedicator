@@ -8,7 +8,7 @@
             <div class="col-md-12 col-lg-12 d-flex align-items-center">
               <div class="card-body p-4 p-lg-3 text-black" >
 
-                <form >
+                
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -18,15 +18,17 @@
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div class="form-floating mb-3">
-                    <input type="email" value="" id="iemailaddress" class="form-control form-control-lg" />
+                    <input type="email" [(ngModel)]="userName" id="iemailaddress" class="form-control form-control-lg" />
+                    <p>{{userName}}</p>
                     <label class="form-label" for="lemailaddress">Email address</label>
                   </div>
 
                   <div class="form-floating mb-3">
-                    <input type="password"  value="" id="ipassword" class="form-control form-control-lg" />
+                    <input type="password"  [(ngModel)]="passWord" id="ipassword" class="form-control form-control-lg" />
+                    <p>{{passWord}}</p>
                     <label class="form-label" for="lpassword">Password</label>
                   </div>
-
+                  <label class="form-label" style="color:red ;">{{errorMessage}}</label>
                   <div class="pt-1 mb-3">
                     <a class="btn btn-dark btn-lg btn-block" (click)="login()">Login</a>
                   </div>
@@ -34,7 +36,7 @@
                   <p class="mb-4 pb-lg-2" style="color: #393f81;">Don't have an account?
                   <a routerLink="/app" style="color: #393f81;">Register here</a></p>
                 
-                </form>
+                
 
               </div>
             </div>
