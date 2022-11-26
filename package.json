@@ -1,6 +1,6 @@
 {
-  "name": "demo-project",
-  "version": "0.0.0",
+  "name": "emedicator",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
