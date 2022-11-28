@@ -13,6 +13,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
+import { AuthGuard } from './login/auth.guard';
+
 
 
 @NgModule({
@@ -34,7 +36,7 @@ import { FormsModule} from '@angular/forms';
     FormsModule
     
   ],
-  providers: [],
+  providers: [AuthGuard],
   //bootstrap: [LoginComponent]
    bootstrap: [AppComponent]
 })
