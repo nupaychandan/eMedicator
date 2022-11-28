@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
+import { AuthGuard } from './login/auth.guard';
+
 import { FaqComponent } from './faq/faq.component';
 
 
@@ -39,7 +41,7 @@ import { FaqComponent } from './faq/faq.component';
     FormsModule
 
   ],
-  providers: [],
+  providers: [AuthGuard],
   //bootstrap: [LoginComponent]
    bootstrap: [AppComponent]
 })

@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       if(this.callData.status)
       {
        console.log("****","Login Success");
+       localStorage.setItem('username',this.userName);
        this.router.navigateByUrl('/dashboard');
        //document.write("Login successfully.");
       }

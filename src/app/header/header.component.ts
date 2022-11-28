@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  userName:any;
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {
@@ -15,5 +17,6 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.router.navigateByUrl('/');
+    localStorage.removeItem('username');
   }
 }
