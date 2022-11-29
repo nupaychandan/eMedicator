@@ -16,6 +16,7 @@ import { FormsModule} from '@angular/forms';
 import { AuthGuard } from './login/auth.guard';
 
 import { FaqComponent } from './faq/faq.component';
+import { CryptService } from './login/crypt.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { FaqComponent } from './faq/faq.component';
     FormsModule
 
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard,CryptService],
   //bootstrap: [LoginComponent]
    bootstrap: [AppComponent]
 })

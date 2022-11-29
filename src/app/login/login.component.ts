@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
+import {CryptService} from "./crypt.service"
 
 @Component({
   selector: 'app-login',
@@ -14,12 +15,17 @@ export class LoginComponent implements OnInit {
   userName:any;
   passWord:any;
   errorMessage:any;
-  constructor(private Api:LoginService,private router:Router ) {}
+  constructor(private Api:LoginService,private router:Router,private crypto:CryptService ) {}
 
 
   ngOnInit(): void {
    
     //this.login();
+    var encrypted = this.crypto.set('username');
+    var decrypted = this.crypto.get(encrypted);
+   
+    console.log('Encrypted :' + encrypted);
+    console.log('Encrypted :' + decrypted);
   }
   login() {
     console.log("testing..");

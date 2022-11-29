@@ -8,6 +8,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AuthGuard } from './login/auth.guard';
 
 
+
 const routes: Routes = [
   { path:'', component:LoginComponent},
   { path:'app', component:AppComponent}, 
