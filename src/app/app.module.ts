@@ -11,12 +11,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { AuthGuard } from './login/auth.guard';
 
 import { FaqComponent } from './faq/faq.component';
 import { CryptService } from './login/crypt.service';
+import { HeaderInterceptor } from './header.interceptor';
+import { ResponseInterceptor } from './response.interceptor';
+
 
 
 @NgModule({
@@ -42,7 +45,15 @@ import { CryptService } from './login/crypt.service';
     FormsModule
 
   ],
-  providers: [AuthGuard,CryptService],
+  providers: [AuthGuard,CryptService,
+  { provide:HTTP_INTERCEPTORS,
+  useClass:HeaderInterceptor,
+  multi:true },
+  { provide: HTTP_INTERCEPTORS,
+  useClass:ResponseInterceptor,
+  multi:true}
+  ],
+    
   //bootstrap: [LoginComponent]
    bootstrap: [AppComponent]
 })
