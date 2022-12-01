@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 import {CryptService} from "./crypt.service"
+import { HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -54,6 +55,5 @@ export class LoginComponent implements OnInit {
 //  public btnclick(){
 //   this.router.navigate(['/registration']);
 //  }
-  
 }
 
