@@ -1,3 +1,4 @@
+<div class="main">
 <div class="app-sidebar sidebar-shadow">
                 <div class="app-header__logo">
                     <div class="logo-src"></div>
@@ -38,29 +39,26 @@
                                     Process
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
-                                <ul>
+                                <ul class=" mm-show">
+
                                     <li>
-                                        <a routerLink="" class="mm-active">
+                                        <a id="home" class="menu mm-active" (click)="navigateAndHighlight('home')"  routerLink="/homepage" >
                                             <i class="metismenu-icon">
                                             </i>Home
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="/Registration" class="mm-active">
+                                        <a id="registration" (click)="navigateAndHighlight('registration')" routerLink="/Registration" class="menu " >
                                             <i class="metismenu-icon">
                                             </i>Registration
                                         </a>
+                                        <a id="faq" (click)="navigateAndHighlight('faq')" routerLink="/faq" class="menu" >
+                                            <i class="metismenu-icon">
+                                            </i>FAQ Section
+                                        </a>
                                     </li>
-                                    <li>
-                                      <a href="/faq" class="mm-active">
-                                          <i class="metismenu-icon">
-                                          </i>FAQ Section
-                                      </a>
-                                  </li>
                                  </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
 </div>
-
+</div>
