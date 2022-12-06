@@ -12,10 +12,9 @@ export class CryptService {
     
     var key = CryptoJS.enc.Utf8.parse(this.encKey);
     var iv = CryptoJS.enc.Utf8.parse(this.encKey);
-    var encrypted = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(username.toString()), this.encKey,
+    var encrypted = CryptoJS.AES.encrypt(username.toString(), this.encKey,
     {
-        keySize: 128 / 8,
-        iv: iv,
+        iv:iv,
         mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Pkcs7
     });
@@ -26,9 +25,9 @@ export class CryptService {
   get(username: any){
     var key = CryptoJS.enc.Utf8.parse(this.encKey);
     var iv = CryptoJS.enc.Utf8.parse(this.encKey);
-    var decrypted = CryptoJS.AES.decrypt(username, this.encKey, {
-        keySize: 128 / 8,
-        iv: iv,
+    var decrypted = CryptoJS.AES.decrypt(username, this.encKey,
+       {
+        iv:iv,
         mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Pkcs7
     });
