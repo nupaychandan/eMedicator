@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
    
     //this.login();
     var encrypted = this.crypto.set('Welcome to angular');
-    var decrypted = this.crypto.get('D+aYpCGqHVE9knEroiTPKQ==');
+    var decrypted = this.crypto.get(encrypted);
    
     console.log('Encrypted :' + encrypted);
     console.log('Decrypted :' + decrypted);
